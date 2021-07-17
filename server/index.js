@@ -2,7 +2,7 @@ if (process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 }
 
-const path = require('path');
+const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
 const postsRoutes = require('./routes/posts.js');
@@ -11,6 +11,7 @@ const app = express();
 
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
+app.use(cors());
 
 app.use('/posts', postsRoutes);
 

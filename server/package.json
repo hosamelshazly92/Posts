@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "create posts react application",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Hosam Elshazly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hosamelshazly92/Posts/issues"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.13.3",
+    "nodemon": "^2.0.12",
+    "path": "^0.12.7"
+  }
+}

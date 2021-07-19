@@ -7,6 +7,8 @@ import {
     Paper 
 } from "@material-ui/core";
 import FileBase from "react-file-base64";
+import { useDispatch } from "react-redux";
+import { createPost } from "../../actions/posts";
 
 const Form = () => {
     const classes = useStyles();
@@ -19,8 +21,12 @@ const Form = () => {
         selectedFile: ""
     });
 
-    const handleSubmit = () => {
+    const dispatch = useDispatch();
 
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+
+        dispatch(createPost(postData));
     }
 
     const clear = () => {
@@ -30,8 +36,8 @@ const Form = () => {
     return (
         <Paper className={ classes.paper }>
             <form 
-                className={ classes.form } 
-                autocomplete="off" 
+                className={ classes.root } 
+                autoComplete="off" 
                 noValidate
                 onSubmit={ handleSubmit }
             >
@@ -81,7 +87,7 @@ const Form = () => {
                     }) }
                 />
 
-                <div classNmae={ classes.fileInput }>
+                <div className={ classes.fileInput }>
                     <FileBase 
                         type="file"
                         multiple={ false }
@@ -93,14 +99,15 @@ const Form = () => {
 
                 <Button 
                     className={ classes.buttonSubmit }
-                    variant="container"
+                    variant="contained"
                     color="primary"
                     size="large"
                     type="submit"
                     fullWidth
                 >Submit</Button>
 
-                <Button 
+                <Button
+                    className={ classes.buttonClear }
                     variant="contained"
                     color="secondary"
                     size="small"

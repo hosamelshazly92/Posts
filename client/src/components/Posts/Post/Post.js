@@ -28,7 +28,7 @@ const Post = ({ post, setCurrentId }) => {
             <div className={ classes.overlay }>
                 <Typography variant="h6">{ post.creator }</Typography>
                 <Typography variant="body2">
-                    { moment(post.createdAt).fromNow }
+                    { moment(post.createdAt).fromNow() }
                 </Typography>
             </div>
 
@@ -51,9 +51,16 @@ const Post = ({ post, setCurrentId }) => {
                 </Typography>
             </div>
 
+            <Typography
+                    className={ classes.title }
+                    variant="h5"
+                    gutterBottom
+                >
+                    { post.title }
+            </Typography>
+
             <CardContent>
                 <Typography
-                    className={ classes.title }
                     variant="h5"
                     gutterBottom
                 >

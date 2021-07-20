@@ -29,6 +29,8 @@ mongoose.connect(process.env.DBURL, {
     console.log(err);
 });
 
+mongoose.set('useFindAndModify', false);
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log("==========> server success");

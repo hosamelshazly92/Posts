@@ -10,9 +10,12 @@ const updatePost = (id, updatedPost) => axios.patch(`${ URL }/${ id }`, updatedP
 
 const deletePost = (id) => axios.delete(`${ URL }/${ id }`);
 
+const likePost = (id) => axios.patch(`${ URL }/${ id }/like`);
+
 module.exports = {
     fetchPosts,
     createPost,
     updatePost,
-    deletePost
+    deletePost,
+    likePost
 };

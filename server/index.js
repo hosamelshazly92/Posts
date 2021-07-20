@@ -9,6 +9,11 @@ const postsRoutes = require('./routes/posts.js');
 
 const app = express();
 
+app.use((req, res, next) => {
+    console.log(`==========> ${ req.path }`);
+    next();
+});
+
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());

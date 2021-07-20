@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import useStyles from "./styles";
 import { 
     TextField, 
-    Button, 
+    Button,
     Typography, 
     Paper 
 } from "@material-ui/core";
@@ -25,7 +25,6 @@ const Form = () => {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-
         dispatch(createPost(postData));
     }
 

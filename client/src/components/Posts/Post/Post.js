@@ -14,7 +14,7 @@ import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 
 const moment = require('moment');
 
-const Post = ({ post }) => {
+const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
     
     return (
@@ -36,9 +36,9 @@ const Post = ({ post }) => {
                 <Button
                     style={{ color: "white" }}
                     size="small"
-                    onClick={ () => {} }
+                    onClick={ () => setCurrentId(post._id) }
                 >
-                    <MoreHorizIcon fontSize="default" />
+                    <MoreHorizIcon fontSize="medium" />
                 </Button>
             </div>
 

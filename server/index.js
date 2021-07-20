@@ -1,16 +1,14 @@
-if (process.env.NODE_ENV !== "production") {
-    require('dotenv').config();
-}
-
 const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
 const postsRoutes = require('./routes/posts.js');
+const dotenv = require('dotenv');
 
 const app = express();
+dotenv.config();
 
 app.use((req, res, next) => {
-    console.log(`==========> ${ req.path }`);
+    console.log(`==========> ${ req.method } ${ req.path }`);
     next();
 });
 
